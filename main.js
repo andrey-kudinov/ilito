@@ -1,7 +1,7 @@
 const card = document.querySelector('.flip-card')
 card.onclick = () => card.classList.toggle('open')
 
-const countImages = 2
+const countImages = 16
 
 const button = document.querySelector('button')
 
