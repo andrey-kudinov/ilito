@@ -14,8 +14,16 @@ const openNewCard = () => {
 button.onclick = () => {
   if (card.classList.contains('open')) {
     card.classList.remove('open')
-    setTimeout(() => openNewCard(), 800);
+    setTimeout(() => openNewCard(), 800)
   } else {
     openNewCard()
   }
 }
+
+button.addEventListener('mousemove', e => {
+  const rect = e.target.getBoundingClientRect()
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  button.style.setProperty('--x', x + 'px')
+  button.style.setProperty('--y', y + 'px')
+})
